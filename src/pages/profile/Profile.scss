@@ -1,0 +1,106 @@
+@import "../../style.scss";
+
+.profile{
+    @include themify($themes){
+        background-color: themed("bgSoft");
+
+        .images{
+            width: 100%;
+            height: 300px;
+            position: relative;
+
+            .cover{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .profileImg{
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                object-fit: cover;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                top: 200px;
+            }
+        }
+        .profileContainer{
+            padding: 20px 70px;
+            .uinfo{
+                height: 100px;
+                box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
+                -webkit-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
+                -moz-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
+                background-color: themed("bg");
+                border-bottom: 1px solid themed("border");
+                border-radius: 20px;
+                color: themed("textColor");
+                padding: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .left{
+                    flex: 1;
+                    display: flex;
+                    gap: 10px;
+
+                    a{
+                        border: 1px solid themed("border");
+                        padding: 5px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                    }
+
+
+                }
+
+                .center{
+                    flex: 1;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+                    margin-top: 2.7rem;
+                    margin-left: 2rem;
+
+                    span{
+                        font-size: 20px;
+                        font-weight: 500;
+                    }
+
+                    .item{
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                    }
+
+                    .info{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+
+                        span{
+                            font-size: 12px;
+                        }
+                    }
+
+                }
+
+                .right{
+flex: 1;
+display: flex;
+align-items: center;
+justify-content: flex-end;
+gap: 10px;
+                }
+    
+            }
+        }
+
+        
+    }
+}
