@@ -2,12 +2,13 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import axios from "axios";
+
 import { useState } from "react";
 
 import "./Login.scss";
 
 const Login = () => {
+
 
 const navigate=useNavigate();
 
@@ -22,15 +23,19 @@ const navigate=useNavigate();
 const [error, setError]=useState(null);
 //  HANDLE SUBMIT HERE
 const handleChange=e=>{
-  setInput(prev=>({...prev, [e.target.name] : e.target.value}))
+  setInput(prev=>({...prev, [e.target.name]: e.target.value}));
 }
+
+console.log(inputs)
 
 //  GET API FROM BACKEND
 
 const {login}=useContext(AuthContext);
 
 const handleLogin= async (e)=>{
+
   e.preventDefault();
+
   try{
     await login(inputs);
     navigate("/")
@@ -39,7 +44,8 @@ const handleLogin= async (e)=>{
   catch(err){
     setError(err.response.data);
   }
-}
+  }
+
 
   return (
     <div className="login">
@@ -49,10 +55,9 @@ const handleLogin= async (e)=>{
 
           <p>
        
-         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem deserunt sunt at?
-         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-         deleniti totam adipisci.
-   
+        The revolutionary new platform that allows you to post anything for free.
+          With GitaSocialX you can share your thoughts, photos, and videos with freinds and family in an easy and secure way.No more worrying about costly subscription fees or hidden changes . just post away! Download Free post today and start connecting with the world
+        
           </p>
           <span>Login and chat , have fun </span>
           <Link to='/register'>
@@ -64,11 +69,11 @@ const handleLogin= async (e)=>{
         <div className="right">
           <h1>Login</h1>
           <form>
-            <input type="text" placeholder="Username" name="username"  onChange={handleChange}/>
+            <input type="text" placeholder="Username" name="username"  onChange={handleChange} required/>
 
-            <input type="password" placeholder="Password" name="password" onChange={handleChange} />
+            <input type="password" placeholder="Password" name="password" onChange={handleChange}  required/>
 
-            {error && <p>{error}</p>}
+            {error && <small>{error}</small>}
 <button onClick={handleLogin}>Login</button>
 
 

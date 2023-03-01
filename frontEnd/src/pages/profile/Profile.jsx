@@ -11,7 +11,7 @@ import {
   AiOutlineMail,
 } from "react-icons/ai";
 import { BsPinterest } from "react-icons/bs";
-import { BiDotsVertical, BiLocationOn, BiLocationPlus } from "react-icons/bi";
+import { BiDotsVertical,  BiLocationPlus } from "react-icons/bi";
 import { GrLanguage } from "react-icons/gr";
 import Post from "../../components/post/Post";
 import Posts from "../../components/posts/Posts";

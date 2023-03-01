@@ -40,10 +40,10 @@ const NavBar = () => {
 
         <div className="user">
           <img
-            src={currentUser.profileImg}
+            src={currentUser.profilePic}
             alt=""
           />
-          <span>{currentUser.user}</span>
+          <span>{currentUser.username}</span>
         </div>
       </div>
     </div>
