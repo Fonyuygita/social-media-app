@@ -18,6 +18,7 @@ import Profile from "./pages/profile/Profile";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/DarkModeContext";
 import { AuthContext } from "./context/AuthContext";
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 function App() {
   // const currentUser = true;
@@ -26,10 +27,14 @@ function App() {
 
   const {currentUser}=useContext(AuthContext)
 
+  // create query client
+  const queryClient = new QueryClient()
+
   // jsx to be used called layout
 
   const Layout = () => {
     return (
+      < QueryClientProvider client={queryClient}>
       <div className={`theme-${darkMode ? "dark" : "light"}`} >
         {/*let us bring in our component now . outlet because the middle section can change with time*/}
         <NavBar />
@@ -41,6 +46,7 @@ function App() {
           <RightBar />
         </div>
       </div>
+      </QueryClientProvider>
     );
   };
 

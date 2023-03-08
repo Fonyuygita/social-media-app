@@ -13,7 +13,7 @@ import {
 import { BsPinterest } from "react-icons/bs";
 import { BiDotsVertical,  BiLocationPlus } from "react-icons/bi";
 import { GrLanguage } from "react-icons/gr";
-import Post from "../../components/post/Post";
+// import Post from "../../components/post/Post";
 import Posts from "../../components/posts/Posts";
 
 const Profile = () => {
