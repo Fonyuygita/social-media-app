@@ -21,8 +21,8 @@ export const register = (req, res) => {
     const hashedPassword = bcrypt.hashSync(req.body.password, salt);
 
     // now we add our user inside our db with hashed password
-    const q = "INSERT INTO users (username, email, password) VALUE(?)";
-    const values = [req.body.username, req.body.email, hashedPassword];
+    const q = "INSERT INTO users (username, email, password, name) VALUE(?)";
+    const values = [req.body.username, req.body.email, hashedPassword, req.body.name];
 
     db.query(q, [values], (err, data) => {
       if (err)
@@ -59,7 +59,7 @@ export const login = (req, res) => {
 
     // convert user id to token using jwt
 
-    const token = jwt.sign({ id: data[0].id }, "jnfvgjtgif");
+    const token = jwt.sign({ id: data[0].id }, process.env.SECRET_TOKEN);
 
     //    finally we can send our user info in form of a cookie
     const { password, ...others } = data[0];

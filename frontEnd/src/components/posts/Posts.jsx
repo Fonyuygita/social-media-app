@@ -5,17 +5,21 @@ import {useQuery } from 'react-query'
 import { makeRequest } from '../../axios'
 
 const Posts = () => {
-  const { isLoading, error, data } = useQuery('posts', () =>
+  const { isLoading, error, data } = useQuery(['posts'], () =>
   // create a simple function for axios which include a base url
-  makeRequest.get("/posts").then(res=>{
+  makeRequest.get("/posts").then((res)=>{
     return res.data
   })
 
   )
+  console.log(data);
 
   return (
+
     <div className='posts'>
-    {data.map(post=>{
+
+    {/*
+     {data.map(post=>{
       return(
       
       <Post  post={post} key={post.id}/>
@@ -24,6 +28,10 @@ const Posts = () => {
       )
 
     })}
+
+  */}
+
+ 
     </div>
   )
 }

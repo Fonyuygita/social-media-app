@@ -34,7 +34,7 @@ function App() {
 
   const Layout = () => {
     return (
-      < QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
       <div className={`theme-${darkMode ? "dark" : "light"}`} >
         {/*let us bring in our component now . outlet because the middle section can change with time*/}
         <NavBar />
