@@ -18,7 +18,12 @@ import Profile from "./pages/profile/Profile";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/DarkModeContext";
 import { AuthContext } from "./context/AuthContext";
-import { QueryClient, QueryClientProvider } from 'react-query'
+import {
+  QueryClient,
+  QueryClientProvider,
+  
+} from '@tanstack/react-query'
+
 
 function App() {
   // const currentUser = true;

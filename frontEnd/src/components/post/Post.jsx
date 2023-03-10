@@ -36,7 +36,7 @@ const Post = ({ post }) => {
           <FiMoreHorizontal />
         </div>
         <div className="content">
-          <p>{post.desc}</p>
+          <p>{post.des}</p>
           <img src={post.img} alt="" />
         </div>
         <div className="info">

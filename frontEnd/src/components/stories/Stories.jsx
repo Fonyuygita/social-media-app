@@ -40,7 +40,7 @@ const stories=[
     <div className='stories'>
 <div className="story">
 <img src={currentUser.profileImg} alt="" />
-<span>{currentUser.user}</span>
+<span>{currentUser.name}</span>
 <button>+</button>
 </div>
 

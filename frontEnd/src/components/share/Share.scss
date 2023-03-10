@@ -1,0 +1,83 @@
+
+@import '../../style.scss';
+
+.share{
+
+    margin-bottom: 2rem;
+    
+    @include themify($themes){
+    padding: 30px;
+    
+    ox-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
+    background-color: themed("bg");
+    color: themed("textColor");
+    .top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .userInfo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+            .shareImg{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+            }
+
+            input{
+                padding: 5px 20px;
+                border: 1px solid gray;
+                outline: none;
+                background-color: transparent;
+                color: #fff;
+
+                &:hover{
+                    border: 1px solid gray;
+                    outline: none;  
+                }
+            }
+        }
+    }
+    .bottom{
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button{
+            color: #fff;
+            background-color: teal;
+            padding: 11px 14px;
+            border: none;
+            cursor: pointer;
+
+
+        }
+
+        .upload{
+            display: flex;
+            align-items: center;
+           gap: 11px;
+
+           small{
+            color: gray;
+           }
+
+
+            .profile{
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+        }
+      
+    }
+}
+}

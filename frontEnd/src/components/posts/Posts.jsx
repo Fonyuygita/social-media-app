@@ -1,13 +1,14 @@
 import React from 'react'
 import './Posts.scss'
 import Post from '../post/Post'
-import {useQuery } from 'react-query'
+import {useQuery } from '@tanstack/react-query'
+
 import { makeRequest } from '../../axios'
 
 const Posts = () => {
-  const { isLoading, error, data } = useQuery(['posts'], () =>
+  const { isLoading, error, data } = useQuery(["posts"], () =>
   // create a simple function for axios which include a base url
-  makeRequest.get("/posts").then((res)=>{
+    makeRequest.get("/posts").then((res)=>{
     return res.data
   })
 
@@ -16,20 +17,29 @@ const Posts = () => {
 
   return (
 
+    
     <div className='posts'>
 
-    {/*
-     {data.map(post=>{
-      return(
-      
-      <Post  post={post} key={post.id}/>
+    {error ? "something went wrong": ( 
+      isLoading ? "Loading....." : data.map(post=>{
+         
+       return(
+       
+       <Post  post={post} key={post.id}/>
+   
+         
+       )
+   
+     }) 
+   ) }
+ 
+  
+  
+  
+   
+  
 
-        
-      )
-
-    })}
-
-  */}
+  
 
  
     </div>
