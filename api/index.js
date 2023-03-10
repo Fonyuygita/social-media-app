@@ -4,6 +4,20 @@ import authRoute from "./routes/auth.js";
 import postRoute from "./routes/posts.js"
 import cookieParser from "cookie-parser";
 import cors from "cors"
+import multer from "multer"
+
+
+// using multer for disk storage
+
+export const storage=multer.diskStorage({
+    destination:function(req, file, cb){
+        cb(null, '../frontEnd/public/upload')
+    },
+    filename:function(req, file, cb){
+        cb(null, Date.now() + file.originalname)
+    }
+})
+
 
 
 
@@ -31,7 +45,16 @@ app.use(
 
 app.use("/api/auth", authRoute)
 app.use("/api/posts", postRoute)
+// upload our image here
 
+const upload=multer({storage:storage})
+
+// end point here
+
+app.post("/api/upload", upload.single("file"), (req, res)=>{
+    const file=req.file;
+    res.status(200).json(file.filename);
+})
 
 
 const PORT=process.env.PORT 
